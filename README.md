@@ -1,1 +1,1 @@
-https://github.com/fetchapp2025/fetch
+https://fetchapp2025.github.io/fetch/
