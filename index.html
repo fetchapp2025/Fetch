@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FETCH – Personal Pickup Platform</title>
+<style>
+    body { font-family: 'Segoe UI', sans-serif; margin:0; padding:0; background:#fff; color:#111; line-height:1.6; }
+    header { background:#000; color:white; padding:3rem 1rem; text-align:center; }
+    header h1 { font-size:4.5rem; margin:0; font-weight:900; letter-spacing:1px; }
+    header h2 { font-size:1.8rem; font-weight:600; margin:0.5rem 0 0 0; color:#ddd; }
+
+    section { padding:3rem 1rem; max-width:900px; margin:0 auto; }
+    h2 { color:#000; margin-bottom:1rem; text-align:center; font-weight:bold; }
+    ul { list-style:none; padding:0; }
+    .bullets li::before { content:"✔️ "; font-weight:bold; }
+
+    .how-steps p { margin:1rem 0; font-size:1.1rem; }
+
+    /* Pricing */
+    .pricing-table { width:100%; border-collapse:collapse; margin-top:1rem; }
+    .pricing-table th, .pricing-table td { border:1px solid #000; padding:0.8rem; text-align:center; }
+    .pricing-table th { background:#000; color:white; }
+    .estimator { background:#f9f9f9; padding:1rem; border-radius:8px; border:1px solid #000; margin-top:1rem; text-align:center; }
+    .estimator input { padding:0.5rem; width:100px; text-align:center; border-radius:4px; border:1px solid #000; }
+
+    /* Buttons */
+    .cta-button { display:inline-block; background:#000; color:white; padding:1rem 2rem; border-radius:6px; text-decoration:none; font-weight:bold; margin-top:1rem; cursor:pointer; }
+
+    /* Waitlist */
+    .waitlist-form { background:#f9f9f9; padding:2rem; border-radius:8px; border:1px solid #000; margin-bottom:1rem; }
+    input, select { width:100%; padding:0.5rem; margin-top:0.3rem; margin-bottom:1rem; border-radius:4px; border:1px solid #000; background:white; }
+    .checkbox { display:flex; align-items:center; }
+    .checkbox input { width:auto; margin-right:0.5rem; }
+    .role-explainer { font-size:0.9rem; color:#444; margin-top:0.5rem; }
+
+    /* Confirmation */
+    #thankyou { display:none; padding:1rem; background:#e6ffe6; border:1px solid #000; border-radius:6px; text-align:center; margin-top:1rem; font-weight:bold; }
+
+    /* FAQ */
+    .faq { margin-top:2rem; }
+    .faq-item { background:#f9f9f9; margin:1rem 0; padding:1rem 1.2rem; border-radius:8px; border:1px solid #000; }
+    .faq-item h4 { cursor:pointer; margin:0; font-size:1.1rem; color:#000; display:flex; justify-content:space-between; align-items:center; }
+    .faq-item p { display:none; margin-top:0.8rem; color:#333; }
+    .faq-item.active p { display:block; }
+
+    /* Footer */
+    footer { text-align:center; padding:2rem; background:#000; color:white; margin-top:3rem; font-size:0.9rem; }
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<header>
+  <h1>FETCH</h1>
+  <h2>The world’s first personal pickup platform</h2>
+</header>
+
+<!-- What is Fetch -->
+<section id="what-is-fetch">
+  <h2>What is Fetch?</h2>
+  <p><strong>Fetch is the Uber for personal pickups.</strong></p>
+  <p>🤝 Connects you with someone nearby who can retrieve and deliver items for you.</p>
+  <p>📦 To bring items you already own or have paid for — no extra shopping needed.</p>
+  <ul class="bullets">
+    <li>🛍️ Click & collect orders</li>
+    <li>📚 Library books</li>
+    <li>👔 Laundry</li>
+    <li>🔌 Forgotten chargers</li>
+    <li>💊 Prescriptions</li>
+  </ul>
+  <p><strong>Future:</strong> 🛒 <em>FetchBuy</em> – Fetchers purchase items on your behalf.</p>
+  <h3 style="text-align:center; margin-top:2rem;">⚡ Urgent pickups? Fetch gets it!</h3>
+  <p style="text-align:center; margin-top:1.5rem;"><em>Our mission: Build the world’s biggest people-powered delivery network — like Uber for cars and Airbnb for properties.</em></p>
+</section>
+
+<!-- Waitlist -->
+<section id="waitlist">
+  <h2>Join the Fetch Waitlist</h2>
+  <div class="waitlist-form">
+    <form id="fetchForm" action="mailto:fetchapp2025@gmail.com" method="post" enctype="text/plain">
+      <label>Full Name*</label>
+      <input type="text" name="name" required>
+      <label>Email Address*</label>
+      <input type="email" name="email" required>
+      <label>Phone Number (optional)</label>
+      <input type="tel" name="phone">
+      <label>City / Town*</label>
+      <input type="text" name="city" required>
+      <label>Postcode Area (e.g., SW1, M1)*</label>
+      <input type="text" name="postcode" required>
+      <label>How do you want to use Fetch?*</label>
+      <select name="role" required>
+        <option>Customer</option>
+        <option>Fetcher</option> 
+        <option>Both</option>
+      </select>
+      <div class="role-explainer">
+        <p>👤 <strong>Customer:</strong> Request items you’ve forgotten or can’t fetch yourself.<br>
+        🚴 <strong>Fetcher:</strong> Earn money fetching items for others nearby.<br> 
+        🔄 <strong>Both:</strong> Use Fetch as a Customer and a Fetcher — the best of both worlds.</p>
+      </div>
+      <div class="checkbox">
+        <input type="checkbox" name="consent" required>
+        <span>I agree to receive Fetch launch updates, offers, and news.</span>
+      </div>
+      <button type="submit" class="cta-button">Join the Waitlist</button>
+    </form>
+    <div id="thankyou">✅ Thank you for your submission! We’ll be in touch soon.</div>
+  </div>
+</section>
+
+<!-- How it Works -->
+<section id="how-it-works">
+  <h2>How it Works</h2>
+  <div class="how-steps">
+    <p><strong>1️⃣ Tell us</strong> what you need fetched.</p>
+    <p><strong>2️⃣ We assign</strong> the nearest Fetcher instantly.</p>
+    <p><strong>3️⃣ Track</strong> your Fetcher in real time.</p>
+    <p><strong>4️⃣ Receive</strong> your item — fast, secure, and people-powered.</p>
+  </div>
+</section>
+
+<!-- Pricing -->
+<section id="pricing">
+  <h2>Pricing</h2>
+  <ul class="bullets">
+    <li>🎁 First Fetch FREE</li>
+    <li>💷 £1 base fee + £0.15 per min (average fetch: 10 mins)</li>
+    <li>💳 Save up to 73% with FetchPass</li>
+    <li>🌍 Unlimited Fetches with FetchPrime (£8.99/month)</li>
+    <li>🛡️ Optional insurance add-on</li>
+    <li>💰 Tips optional — 100% go to Fetchers</li>
+  </ul>
+  <p style="color:red; font-weight:bold;"><strong>Important:</strong> Pricing is based on <em>estimated distance</em>, not live time. Traffic does not affect your price.</p>
+
+  <h3>FetchPass (Prepaid Minutes)</h3>
+  <table class="pricing-table">
+    <thead>
+      <tr><th>Pass</th><th>Price</th><th>Minutes</th><th>Valid For</th><th>Saving</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>30 mins</td><td>£3.99</td><td>30</td><td>1 day</td><td>62%</td></tr>
+      <tr><td>60 mins</td><td>£6.99</td><td>60</td><td>3 days</td><td>67%</td></tr>
+      <tr><td>200 mins</td><td>£18.99</td><td>200</td><td>7 days</td><td>73%</td></tr>
+      <tr><td>400 mins</td><td>£36.99</td><td>400</td><td>30 days</td><td>73%</td></tr>
+    </tbody>
+  </table>
+  <p><em>Note: Base fee (£1) still applies with a pass.</em></p>
+
+  <!-- Estimator -->
+  <div class="estimator">
+    <h3>💡 Estimate Your Fetch</h3>
+    <label>Estimated Distance (minutes equivalent):  
+      <input type="number" id="minutes" placeholder="10" min="0">
+    </label>
+    <button onclick="calculatePrice()" class="cta-button">Estimate Price</button>
+    <p id="estimateResult" style="margin-top:1rem;font-weight:bold;"></p>
+    <p style="font-size:0.9rem; color:#444;">⚖️ Example: 30-min Fetch = £5.50 → Fetcher earns ~£3.38 (75% of per-minute portion).</p>
+  </div>
+</section>
+
+<!-- Branches -->
+<section id="branches">
+  <h2>Future Branches</h2>
+  <ul class="bullets">
+    <li>🎓 <strong>FetchCampus:</strong> Need your library book or assignment collected while you’re in a lecture? A nearby student Fetcher can pick it up and deliver it to you.</li>
+    <li>🏬 <strong>FetchRetail:</strong> Forgot your new shoes or groceries? A Fetcher can go to the store and bring your items to your door.</li>
+    <li>💊 <strong>FetchHealth:</strong> Need a prescription or vitamins quickly? A Fetcher will retrieve them safely from the pharmacy and deliver.</li>
+    <li>🛒 <strong>FetchBuy:</strong> Want groceries or essentials bought and delivered? Fetchers will purchase and bring them (coming soon).</li>
+    <li>💼 <strong>FetchBiz:</strong> Urgent office supplies or documents? A nearby Fetcher can collect and deliver across the city.</li>
+    <li>🐾 <strong>FetchPet:</strong> Out of pet food or litter? A Fetcher will go to the store and bring it to you fast.</li>
+    <li>❤️ <strong>FetchCare:</strong> Need items for an elderly relative? A Fetcher can pick up essentials and deliver safely with care.</li>
+    <li>🎉 <strong>FetchEvents:</strong> Forgot snacks or party supplies? A Fetcher will grab them and arrive in time for your event.</li>
+    <li>🔧 <strong>FetchPro:</strong> Need urgent tools or parts for a repair? A Fetcher can fetch them so you focus on your work.</li>
+    <li>🔑 <strong>FetchLocksmith:</strong> Locked out or need a passport urgently? A licensed Fetcher can retrieve the item and deliver securely.</li>
+    <li>✈️ <strong>FetchPlane:</strong> Need an urgent package in another city? A traveler Fetcher flying that route can carry it for you.</li>
+    <li>👨‍👩‍👧 <strong>FetchFamily:</strong> Need school homework, sports gear, or groceries for kids? A trusted Fetcher will pick up and deliver safely.</li>
+  </ul>
+  <p style="margin-top:1rem; text-align:center;">🚀 Coming soon: <em>FetchChallenge — watch us fetch a coffee to Everest!</em></p>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+  <h2>Frequently Asked Questions</h2>
+  <div class="faq-item">
+    <h4>💰 How much do Fetchers get paid? <span>+</span></h4>
+    <p>Fetchers earn 75% of the per-minute portion. Example: 30-min Fetch = £5.50 → Fetcher earns ~£3.38. Tips go 100% to Fetchers.</p>
+  </div>
+  <div class="faq-item">
+    <h4>📏 Is the price based on time or distance? <span>+</span></h4>
+    <p>Pricing is based on estimated distance converted to minutes. Your price is fixed once requested; traffic does not change it.</p>
+  </div>
+  <div class="faq-item">
+    <h4>📦 What items can Fetch pick up? <span>+</span></h4>
+    <p>Anything you already own or have paid for: chargers, books, laundry, click & collect orders, prescriptions, keys, documents, groceries, and more.</p>
+  </div>
+  <div class="faq-item">
+    <h4>💳 Do I pay upfront? <span>+</span></h4>
+    <p>No. Payment is taken after pickup and delivery confirmation.</p>
+  </div>
+  <div class="faq-item">
+    <h4>📍 Can I track my Fetcher? <span>+</span></h4>
+    <p>Yes, real-time tracking is built into every Fetch.</p>
+  </div>
+  <div class="faq-item">
+    <h4>📊 How does Fetch calculate earnings and costs? <span>+</span></h4>
+    <p>
+      • <strong>Fetcher earnings:</strong> 75% of the per-minute portion<br>
+      • <strong>Fetch earnings:</strong> 25% of per-minute portion + £1 base fee<br>
+      • <strong>Stripe fee:</strong> 1.4% + 20p on total payment<br><br>
+      <em>Example – 30-min Fetch (£5.50):</em><br>
+      – Per-minute portion = £4.50<br>
+      – Fetcher earns 75% = £3.38<br>
+      – Fetch earns 25% = £1.12 + £1 base fee = £2.13<br>
+      – Stripe fee ≈ £0.28<br>
+      – Fetch net after Stripe = £1.85
+    </p>
+  </div>
+  <div class="faq-item">
+    <h4>🛍️ Can Fetchers buy items for me? <span>+</span></h4>
+    <p>Not yet. Currently Fetch only collects items you already own. FetchBuy (future) will allow purchases on your behalf.</p>
+  </div>
+  <div class="faq-item">
+    <h4>🛡️ What about insurance and refunds? <span>+</span></h4>
+    <p>Optional insurance is available. If a Fetch is incomplete, you won’t be charged.</p>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="cta" style="text-align:center;">
+  <h2>Get Started with Fetch</h2>
+  <a href="#waitlist" class="cta-button">Join the Waitlist – First Fetch FREE</a>
+</section>
+
+<!-- Footer -->
+<footer>
+  <p>© 2025 Fetch – The People-Powered Pickup Network | All rights reserved.</p>
+</footer>
+
+<script>
+function calculatePrice() {
+  const baseFee = 1;
+  const perMin = 0.15;
+  const minutes = parseFloat(document.getElementById("minutes").value);
+  if(isNaN(minutes) || minutes < 0) {
+    document.getElementById("estimateResult").innerText="Please enter a valid number.";
+    return;
+  }
+  const perMinCost = perMin * minutes;
+  const total = baseFee + perMinCost;
+  const fetcherEarnings = perMinCost * 0.75;
+  document.getElementById("estimateResult").innerText = 
+    "Estimated Price: £" + total.toFixed(2) + 
+    " | Fetcher earns ~£" + fetcherEarnings.toFixed(2);
+}
+
+// FAQ toggle
+const faqs = document.querySelectorAll('.faq-item');
+faqs.forEach(faq => {
+  faq.addEventListener('click', () => {
+    faq.classList.toggle('active');
+  });
+});
+
+// Waitlist thank-you message
+document.getElementById("fetchForm").addEventListener("submit", function(e) {
+  document.getElementById("thankyou").style.display = "block";
+});
+</script>
+
+</body>
+</html>
